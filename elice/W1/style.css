@@ -1,0 +1,16 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.woong {
+    background: linear-gradient(#03fcd3, #53ff23);
+    width: 100vw;
+    height: 100vh;
+
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
