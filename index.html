@@ -48,12 +48,34 @@
 </head>
 
 <body>
-
+    <script>
+        console.log(this);
+    </script>
+    <input type="button" onclick="console.log(this);" value="1">
+    <input type="button" onclick="console.log(this);" value="2">
     <input type="button" value="night" 
         onclick="
+            // 만약에 이 버튼의 value 값이 night 라면 아래코드가 실행되고,
+            if (this.value === 'night') {
             document.querySelector('body').style.backgroundColor = 'black';
+            document.querySelector('body').style.color = 'white';
+            this.value = 'day';
+            //이 버튼의 value 값을 day로 변경한다.
+            } else {
+            //아니라면 아래코드가 실행된다.
+            document.querySelector('body').style.backgroundColor = 'white';
+            document.querySelector('body').style.color = 'black';
+            //이 버튼의 value 값을 night 로 변경한다.
+            this.value = 'night';
+            }
+        "
+    >
 
-            document.querySelector('body').style.color = 'white'; 
+    <!-- <input type="button" value="night" 
+    onclick="
+        document.querySelector('body').style.backgroundColor = 'black';
+
+        document.querySelector('body').style.color = 'white'; 
         "
     >
 
@@ -62,8 +84,8 @@
         document.querySelector('body').style.backgroundColor = 'white';
 
         document.querySelector('body').style.color = 'black'; 
-    "
->
+        "
+    > -->
 
     <h1><a href="index.html">WEB</a></h1>
 
