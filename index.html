@@ -52,12 +52,12 @@
         console.log(this);
     </script>
     <input type="button" onclick="console.log(this);" value="1">
-    <input type="button" onclick="console.log(this);" value="2">
+    <input type="button" onclick="console.log(this);" value="2"> // this 는 javascript 가 만든 변수
     <input type="button" value="night" 
         onclick="
             // 만약에 이 버튼의 value 값이 night 라면 아래코드가 실행되고,
             if (this.value === 'night') {
-            document.querySelector('body').style.backgroundColor = 'black';
+            document.querySelector('body').style.backgroundColor = 'black'; // 문서의 디자인 바꿀경우 사용
             document.querySelector('body').style.color = 'white';
             this.value = 'day';
             //이 버튼의 value 값을 day로 변경한다.

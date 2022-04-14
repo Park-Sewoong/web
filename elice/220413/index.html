@@ -46,6 +46,37 @@
         gtag('config', 'G-75PEY0F62Y');
         
     </script>
+
+    <script>
+        function night() {
+            document.querySelector('body').style.backgroundColor = 'black'; // 문서의 디자인 바꿀경우 사용
+            document.querySelector('body').style.color = 'white';
+            let as = document.querySelectorAll('a');
+            for (let i = 0; i < as.length; i++) {
+                as[i].style.color='white';
+            }
+        }
+
+        function day () {
+            document.querySelector('body').style.backgroundColor = 'white';
+            document.querySelector('body').style.color = 'black';
+        //이 버튼의 value 값을 night 로 변경한다.
+            let as = document.querySelectorAll('a');
+            for (let i = 0; i < as.length; i++) {
+            as[i].style.color='black';
+            }
+        }
+
+        // function dayNight () {
+        //     if (123) {
+
+        //     } else {
+
+        //     }
+        // }
+    </script>
+
+
 </head>
 
 <body>
@@ -58,28 +89,40 @@
         onclick="
             // 만약에 이 버튼의 value 값이 night 라면 아래코드가 실행되고,
             if (this.value === 'night') {
-            document.querySelector('body').style.backgroundColor = 'black'; // 문서의 디자인 바꿀경우 사용
-            document.querySelector('body').style.color = 'white';
-            let as = document.querySelectorAll('a');
-            for (let i = 0; i < as.length; i++) {
-                as[i].style.color='white';
-            }
+                night();
             this.value = 'day';
             //이 버튼의 value 값을 day로 변경한다.
             } else {
             //아니라면 아래코드가 실행된다.
-            document.querySelector('body').style.backgroundColor = 'white';
-            document.querySelector('body').style.color = 'black';
-            //이 버튼의 value 값을 night 로 변경한다.
-            let as = document.querySelectorAll('a');
-            for (let i = 0; i < as.length; i++) {
-                as[i].style.color='black';
+                day();
             this.value = 'night';
-            }
             }
         ">
 
-    <!-- <input type="button" value="night" 
+        <!-- 만약에 이 버튼의 value 값이 night 라면 아래코드가 실행되고,
+        if (this.value === 'night') {
+        document.querySelector('body').style.backgroundColor = 'black'; // 문서의 디자인 바꿀경우 사용
+        document.querySelector('body').style.color = 'white';
+        let as = document.querySelectorAll('a');
+        for (let i = 0; i < as.length; i++) {
+            as[i].style.color='white';
+        }
+        this.value = 'day';
+        //이 버튼의 value 값을 day로 변경한다.
+        } else {
+        //아니라면 아래코드가 실행된다.
+        document.querySelector('body').style.backgroundColor = 'white';
+        document.querySelector('body').style.color = 'black';
+        //이 버튼의 value 값을 night 로 변경한다.
+        let as = document.querySelectorAll('a');
+        for (let i = 0; i < as.length; i++) {
+            as[i].style.color='black';
+        this.value = 'night';
+        }
+        }
+        ">
+
+    <input type="button" value="night" 
     onclick="
         document.querySelector('body').style.backgroundColor = 'black';
 

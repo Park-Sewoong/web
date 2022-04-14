@@ -1,0 +1,27 @@
+div {
+    background-color: #ccc;
+    text-align: center;
+    height: 120px;
+    line-height: 120px;
+    
+    transition: background-color 1s;
+    
+/*     transition-duration: 1s;
+    transition-delay: 0.5s; */
+}
+
+.red {
+    background-color: red;    
+}
+
+.yellow {
+    background-color: gold;    
+}
+
+.green {
+    background-color: lightgreen;    
+}
+
+.cursor {
+    cursor: pointer;
+}
