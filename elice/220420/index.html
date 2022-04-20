@@ -44,6 +44,7 @@
             {id:2, title:'css', body:'css is ...'},
             {id:3, title:'js', body:'js is ...'}
         ]; 
+        let nextId = 4;
         let selectedId = null; // 아직 값이 없기때문에 null
         function navHandler(e) {  // navHandler 함수를 사용해 클릭했을때 효과 발동
             // 1. 링크가 작동하지 않아야 한다.
@@ -82,7 +83,27 @@
             document.querySelector('article').innerHTML = content;
             control();
         }
-        function create() {}
+        function createHandler(e) {
+            e.preventDefault();
+            const t = e.target.title.value;
+            const b = e.target.body.value;
+            const newTopic = {id:nextId, title:t, body:b};
+            topics.push(newTopic);
+            nav();
+            selectedId = nextId;
+            nextId = nextId +1;
+            read();
+        }
+        function create() {
+            const content = `
+                <form onsubmit="createHandler(event);">
+                    <p><input type="text" name="title" placeholder="제목"></p>
+                    <p><textarea name="body" placeholder="본문"></textarea></p>
+                    <p><input type="submit" value="create"></p>
+                </form>
+                `;
+            document.querySelector('article').innerHTML = content;
+        }
         function update() {}
         function del() {}
         function control() {
@@ -94,7 +115,7 @@
                 `;
             }
             document.querySelector('#control').innerHTML = `
-                <li><a href="/create">Create</a></li>
+                <li><a href="/create" onclick="event.preventDefault(); create();">Create</a></li>
                 ${contextUI}
             `;
         }
