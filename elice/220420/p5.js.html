@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"></script>
+</head>
+
+<body>
+    <h1>WEB</h1>
+    <style>
+        h1 {
+            font-size: 100px;
+        }
+
+        main {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+    <script>
+        function setup() {
+            console.log('setup');
+            createCanvas(windowWidth, windowHeight);
+        }
+
+        function draw() {
+            console.log('draw');
+            noStroke();
+            fill(100, 10)
+            circle(mouseX, mouseY, Math.random() * 100);
+        }
+    </script>
+
+</body>
+
+</html>
