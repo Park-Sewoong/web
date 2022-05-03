@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let topics =[
+            {id:1, title:'html', body:'html is ..'},
+            {id:2, title:'css', body:'css is ..'}, //객체로 표현, 훨씬 편하다
+            {id:3, title:'js', body:'js is ..'}
+        ]
+
+        // [
+        //     [1, 'html', 'html is ..'],
+        //     [2, 'css', 'css is ..'] //배열로 표현
+        // ]
+    </script>
+
+</head>
+
+<body>
+
+    <h1><a href="index.html" onclick="
+            event.preventDefault();
+            document.querySelector('article').innerHTML = `<h2>Welcome</h2>Hello, WEB`;
+        ">WEB
+        </a>
+    </h1>
+    <nav>
+        <ol></ol>
+    </nav> <!-- 내용이 아니라 네비게이션으로의 역할-->
+    
+    <article>
+        <h2>Welcome</h2>
+        Hello, WEB
+    </article>
+
+    <script>
+        function nav() {
+        let navTag = '';
+        for (let i = 0; i < topics.length; i++) {
+            navTag = navTag + `
+                <li>
+                    <a href="/read/${topics[i].id}" id="${topics[i].id}" onclick="
+                        event.preventDefault();
+                        console.log(event.target.id);
+                        for (let i = 0; i < topics.length; i++) {
+                            if (topics[i].id === Number(event.target.id)) {
+                                document.querySelector('article').innerHTML = 
+                                '<h2>'+topics[i].title+'</h2>'+topics[i].body;
+                                break;
+                            }
+                        }
+                    ">
+                        ${topics[i].title}
+                    <a>
+                </li>`;
+        }
+        document.querySelector('nav ol').innerHTML = navTag;
+        console.log(navTag);
+        }
+        nav();
+
+        // let nav = () => {            arrow function
+        // let navTag = '';
+        // for (let i = 0; i < topics.length; i++) {
+        //     navTag = navTag + `<li><a href="/read/${topics[i].id}">${topics[i].title}<a></li>`;
+        // }
+        // document.querySelector('nav ol').innerHTML = navTag;
+        // console.log(navTag);
+        // }
+    </script>
+</body>
+
+</html>
