@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowControl2</title>
+</head>
+<body>
+    <h1>배열 - array</h1>
+    <ul>
+        <li>html</li>
+        <li>css</li>
+        <li>js</li>
+    </ul>
+
+    <ul>
+        <li>egoing</li>
+        <li>leezche</li>
+        <li>graphittie</li>
+    </ul>
+
+    <ul>
+        <li>10</li>
+        <li>20</li>
+        <li>30</li>
+    </ul>
+    <script>
+        // let content1 = 'html';
+        // let content2 = 'css';
+        // let content3 = 'js';
+
+        let contents = ['html', 'css', 'js'];
+        let members = ['egoing', 'leezche', 'graphittie'];
+        let scores = [10, 20, 30];
+
+        console.log(contents[2]); // js
+        console.log(contents.length); // 3
+        console.log(contents);
+        console.log(contents.push('react'));
+        console.log(contents);
+
+    </script>
+
+    <h1>Loop</h1>
+    <script>
+        // for(초기값(딱한번만 실행), boolean => 반복조건, 카운팅 증감) {
+        //     조건을 만족하는 동안 실행될 코드
+        // }
+        //debugger;
+
+        console.log(1);
+        for (let i = 0; i < 3; i = i+1) {
+            console.log(2);
+            console.log(3);
+        }
+        console.log(4);
+    </script>
+
+    <h2>Array + Loop</h2>
+    <ul>
+        <script>
+            for (let i = 0; i < members.length; i++) {
+                document.write('<li>'+members[i]+'</li>'); // 배열에 있는 개수 만큼 요소를 뽑아서 나열
+            }
+        </script>
+    </ul>
+    
+</body>
+</html>
