@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    Javascript is <span 
+        style="
+            background-color: rgb(215,215,215);
+            padding: 0 5px;
+            cursor: pointer;
+        "
+        onclick="
+        document.querySelector('#hidden').style.display='inline';
+        this.style.display='none';
+    
+        ">...</span>
+        <span id="hidden" style="display:none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus corporis nihil dolorem impedit? Temporibus quibusdam nihil pariatur optio accusantium mollitia asperiores dolor consequuntur. Pariatur laborum quaerat deserunt aliquid nesciunt debitis?</span>
+
+        <hr>
+
+    Javascript is <span 
+        style="
+            background-color: rgb(215,215,215);
+            padding: 0 5px;
+            cursor: pointer;
+        "
+        onclick="
+            this.style.display='none';
+            document.querySelector('#content').innerHTML=`Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus corporis nihil dolorem impedit? Temporibus quibusdam nihil pariatur optio accusantium mollitia asperiores dolor consequuntur. Pariatur laborum quaerat deserunt aliquid nesciunt debitis?`
+    
+        ">...</span> 
+        <span id="content"></span>    
+
+
+    <!-- Javascript is 
+        <span>
+        <input type="button" value="..." onclick="
+            if (this.value === '...') {
+                document.write('Javascript is Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore animi ipsa quidem nulla in, voluptas nostrum commodi! Minima eum blanditiis exercitationem sunt sapiente ipsum esse repellat nemo sit sint? Nesciunt?')
+            }
+        ">
+        </span>  -->
+
+    
+</body>
+</html>
